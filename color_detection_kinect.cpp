@@ -40,9 +40,10 @@ int main(int argc, char **argv)
 	cv::createTrackbar("LowV", "Control", &iLowV, 255);
 	cv::createTrackbar("HighV", "Control", &iHighV, 255);
 
+	cv::Mat imgOriginal;
+
 	while (true) {
 
-		cv::Mat imgOriginal;
 		cv::Mat imgHSV;
 		cv::Mat imgThresholded;
 		cv::Mat imgDepth;
@@ -51,7 +52,7 @@ int main(int argc, char **argv)
 		if (!device.getVideo(imgOriginal)) {
 			cout << "Cannot read a frame from video stream. RGB" <<
 			    endl;
-			return 1;
+//			return 1;
 		}
 
 		// Read also Depth image
@@ -90,8 +91,8 @@ int main(int argc, char **argv)
 		// Show the original image
 		cv::imshow("Original", imgOriginal);
 
-		// Wait for 'esc' key press for 30ms. If 'esc' key is pressed, break loop
-		if (cv::waitKey(30) == 27) {
+		// Wait for 'esc' key press for 50ms. If 'esc' key is pressed, break loop
+		if (cv::waitKey(50) == 27) {
 
 			cout << "esc key is pressed by user" << endl;
 
