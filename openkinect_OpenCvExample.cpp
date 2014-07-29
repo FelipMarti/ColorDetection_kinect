@@ -6,6 +6,7 @@
 #include <cv.h>
 #include <cxcore.h>
 #include <highgui.h>
+#include <opencv2/imgproc/imgproc.hpp>
 
 using namespace cv;
 using namespace std;
